@@ -99,72 +99,78 @@ table {
 /*AJUSTES PARA CELULAR*/
 @media screen and (max-width: 768px) {
 
-  /* 1. ELIMINAR LA RAYA BLANCA ENTRE HEADER Y NAV */
-  header, nav, .menu, .navbar {
+  /* 1. Bloqueo total del desplazamiento horizontal */
+  html, body {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
     margin: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    border: none !important; /* Quita bordes o separadores blancos */
+    padding: 0 !important;
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
   }
 
-  /* 2. HACER VISIBLES LOS BOTONES DEL NAVEGADOR (Inicio / Quién Soy) */
-  nav, header nav, .menu {
+  /* 2. Forzar a todos los elementos a alinearse desde el borde izquierdo */
+  header, main, footer, section, div, nav, ul, li {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    box-sizing: border-box !important;
+    position: static !important; /* Desactiva posiciones absolutas que empujan el contenido */
+  }
+
+  /* 3. Centrar la foto de perfil para que no se corte */
+  header img, .foto-perfil, img {
+    max-width: 80% !important;
+    height: auto !important;
+    margin: 10px auto !important;
+    display: block !important;
+  }
+
+  /* 4. Reparar el menú de navegación (para que el botón no diga "ini-") */
+  nav, .menu, header nav {
+    width: 100% !important;
     display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 10px !important;
-    padding: 12px 0 !important;
-    background-color: transparent !important; /* Toma el color de su contenedor sin franjas */
+    flex-direction: column !important; /* Apila Inicio y Quién Soy verticalmente */
+    align-items: center !important;
+    padding: 10px 0 !important;
   }
 
-  nav a, header nav a, .menu a {
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    padding: 8px 14px !important;
-    font-size: 0.95rem !important;
-    text-decoration: none !important;
-    /* Forzamos color para asegurar visibilidad (ajústalo si tus letras eran oscuras o claras) */
-    color: inherit !important; 
+  nav a, .menu a, header nav a {
+    display: block !important;
+    width: auto !important;
+    white-space: nowrap !important; /* Evita que las palabras se rompan a la mitad */
+    font-size: 1rem !important;
+    padding: 8px 15px !important;
+    text-align: center !important;
   }
 
-  /* 3. HACER VISIBLES Y SEPARAR LOS BOTONES DE WHATSAPP Y EMAIL */
-  /* Forzamos visibilidad en el enlace y en la imagen interna */
+  /* 5. Traer de vuelta WhatsApp y Email a la pantalla */
   a[href*="wa.me"], 
   a[href*="mailto"], 
   a[href*="whatsapp"], 
-  .contacto a, 
-  .redes a {
+  .contacto, .redes {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    visibility: visible !important;
-    opacity: 1 !important;
     margin: 15px auto !important;
-    text-decoration: none !important;
+    width: 100% !important;
   }
 
-  img[src*="whatsapp"], 
-  img[src*="gmail"], 
-  img[src*="email"] {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  img[src*="whatsapp"], img[src*="gmail"], img[src*="email"] {
     width: 45px !important;
     height: auto !important;
-    margin: 0 auto !important;
+    display: block !important;
+    margin: 5px auto !important;
   }
 
-  /* 4. MANTENER TABLA Y AJUSTES GENERALES */
-  html, body {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
-
+  /* 6. Ajuste de tabla */
   table {
-    width: 95% !important;
+    width: 90% !important;
     margin: 15px auto !important;
   }
 
