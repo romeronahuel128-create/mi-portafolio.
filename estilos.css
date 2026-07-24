@@ -126,6 +126,13 @@ table {
     font-size: 0.95rem !important;
   }
 
+    header img, .foto-perfil {
+        max-width: 130px !important; 
+        height: auto !important;
+        display: block !important;
+        margin: 10px auto !important;
+  }
+
   /* 4. Asegura que la foto y los íconos no empujen la pantalla */
   img {
     max-width: 100% !important;
