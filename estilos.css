@@ -99,79 +99,41 @@ table {
 /*AJUSTES PARA CELULAR*/
 @media screen and (max-width: 768px) {
 
-  
-  * {
+  /* 1. Corrige el ancho de la pantalla sin cambiar colores de fondo */
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
     margin: 0 !important;
     padding: 0 !important;
+  }
+
+  /* 2. Centra los contenedores principales y evita que se desplacen a la derecha */
+  main, section, header, footer, div {
+    max-width: 100% !important;
     box-sizing: border-box !important;
-    max-width: 100% !important;
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
   }
 
-  
-  body {
-    width: 100% !important;
-    overflow-x: hidden !important;
-    padding: 15px !important;
-    display: block !important; 
-  }
-
-  
-  div, section, main, header, footer, article, nav {
-    display: block !important;
-    width: 100% !important;
-    float: none !important;
-    position: static !important;
-    margin: 10px auto !important; 
-    text-align: center !important; 
-  }
-
-  
+  /* 3. Centra la foto principal, WhatsApp y Email */
   img {
-    display: block !important;
-    margin: 15px auto !important;
     max-width: 100% !important;
     height: auto !important;
-  }
-
-  
-  .icono, .icon, img[src*="whatsapp"], img[src*="gmail"], img[src*="email"] {
-    max-width: 60px !important; 
-    height: auto !important;
-  }
-
-  /* 5. MENÚ/NAVEGADOR: Aparece y se apila verticalmente */
-  nav, .menu, header {
-    display: flex !important;
-    flex-direction: column !important;
-    background-color: #333 !important; 
-    margin-bottom: 20px !important;
-  }
-
-  nav a, .menu a, header a {
+    margin-left: auto !important;
+    margin-right: auto !important;
     display: block !important;
-    padding: 15px !important;
-    color: white !important;
-    text-decoration: none !important;
-    border-bottom: 1px solid #444 !important;
   }
 
- 
-  .contacto-container, .iconos-sociales, div:has(> img[src*="whatsapp"]) {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 15px !important;
-    align-items: center !important;
-    margin-top: 20px !important;
-  }
-
-  
-  .contacto-container a, .iconos-sociales a {
+  /* 4. Apila los elementos de contacto (WhatsApp y Email) uno debajo del otro */
+  /* Si están en un contenedor, los fuerza a ir en columna vertical */
+  body, section, main, .contacto, .redes {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    text-decoration: none !important;
+  }
+
+  /* 5. Asegura que los textos no se peguen a los bordes de la pantalla */
+  h1, h2, h3, p, a {
+    text-align: center !important;
+    word-break: break-word !important;
   }
 }
