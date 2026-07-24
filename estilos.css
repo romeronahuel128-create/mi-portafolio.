@@ -79,19 +79,50 @@ footer p{
     padding: 10px
 }
 
+
+/*ESTO PARA EL MAIN*/
 main {
     font-size: 20px;
     
 }
-
+/*ESTO PARA LA TABLA*/
 table, th, td {
     border: 1px solid black;
 }
 table {
     width: 90%;                
-    margin-top: 30px;           /* Separa la tabla de lo que esté arriba */
-    margin-bottom: 30px;        /*  Separa la tabla del footer */
-    margin-left: auto;          /* Centra la tabla horizontalmente */
+    margin-top: 30px;          
+    margin-bottom: 30px;        
+    margin-left: auto;          
     margin-right: auto;
+}
+/*AJUSTES PARA CELULAR*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+@media (max-width: 768px) {
+  
+  
+  .flex-container, .grid-container, main, section {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
 }
     
