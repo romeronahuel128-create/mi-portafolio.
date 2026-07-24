@@ -99,7 +99,7 @@ table {
 /*AJUSTES PARA CELULAR*/
 @media screen and (max-width: 768px) {
 
-  /* 1. Corrige el ancho de la pantalla sin cambiar colores de fondo */
+  /* 1. Evita desbordes generales */
   html, body {
     width: 100% !important;
     max-width: 100% !important;
@@ -108,13 +108,19 @@ table {
     padding: 0 !important;
   }
 
-  /* 2. Centra los contenedores principales y evita que se desplacen a la derecha */
+  /* 2. Contenedores y alineación general */
   main, section, header, footer, div {
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  /* 3. Centra la foto principal, WhatsApp y Email */
+  body, section, main, .contacto, .redes {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* 3. Ajuste de imágenes y textos */
   img {
     max-width: 100% !important;
     height: auto !important;
@@ -123,17 +129,25 @@ table {
     display: block !important;
   }
 
-  /* 4. Apila los elementos de contacto (WhatsApp y Email) uno debajo del otro */
-  /* Si están en un contenedor, los fuerza a ir en columna vertical */
-  body, section, main, .contacto, .redes {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  /* 5. Asegura que los textos no se peguen a los bordes de la pantalla */
   h1, h2, h3, p, a {
     text-align: center !important;
     word-break: break-word !important;
+  }
+
+  /* 4. SOLUCIÓN PARA LA TABLA "QUIÉN SOY" */
+  table {
+    width: 90% !important;        /* Ocupa el 90% del ancho del celular */
+    max-width: 100% !important;   /* No deja que se salga de la pantalla */
+    margin: 15px auto !important;  /* La centra horizontalmente */
+    display: block !important;    /* Permite scroll horizontal si los datos son muy largos */
+    overflow-x: auto !important;  /* Scroll interno si hace falta */
+    border-collapse: collapse !important;
+  }
+
+  /* Ajuste para las celdas y filas de la tabla */
+  td, th {
+    padding: 8px 10px !important; /* Reduce el espacio interno para ahorrar espacio */
+    font-size: 0.9rem !important;  /* Achica un poco la letra en celulares */
+    word-break: normal !important;
   }
 }
