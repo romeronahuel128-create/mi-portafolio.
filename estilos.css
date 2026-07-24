@@ -140,7 +140,7 @@ table {
   display: block !important;
   width: 100% !important;
   text-align: center !important;
-  font-size: 12rem !important; /* Achica el texto para que entre todo cómodo */
+  font-size: 10rem !important; /* Achica el texto para que entre todo cómodo */
   margin: 10px auto !important;
   clear: both !important;
   white-space: nowrap !important; /* Mantiene tu nombre en un solo renglón */
