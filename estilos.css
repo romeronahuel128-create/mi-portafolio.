@@ -1,0 +1,97 @@
+/*ESTA PARTE ES DEL NAVEGADOR*/
+
+.barra_de_navegacion {
+    width: 100%;             
+    background-color: #304566; 
+    padding: 10px 0
+}
+ .navegacion {
+    display: flex;
+    gap: 80px;               
+    list-style: none;        
+    padding: 0;
+    margin: 0;  
+
+    justify-content: center;
+    max-width: 600px;   
+    margin-left: 500px
+}   
+.navegacion a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+/*ESTA PARTE ES DEL HEADER */
+
+header img {
+    width: 300px;
+    border-radius: 50%;
+    max-width: 600px;   
+    margin-left: 300px
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background-color: rgb(71, 135, 177);
+}
+header h1 {
+    font-size: 48px;
+}
+
+/*ESTA PARTE ES DEL FOOTER*/
+
+.footer-contenido{
+    
+    display: flex;
+    gap: 80px;               
+    list-style: none;  
+    
+    padding: 0;
+    margin: 0;  
+
+    justify-content: center;
+
+    
+    max-width: 600px;   
+    margin-left: 500px
+   
+    
+}
+footer img {
+    width: 40px;
+    border-radius: 50%;
+    margin-top: 9px;
+
+}
+footer p{
+    font-size: 9px;
+    margin-top: 52px;   
+    margin-left: -258px;
+}
+
+.fondo{
+    width: 100%;             
+    background-color:  rgb(71, 135, 177); 
+    padding: 10px
+}
+
+main {
+    font-size: 20px;
+    
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+table {
+    width: 90%;                
+    margin-top: 30px;           /* Separa la tabla de lo que esté arriba */
+    margin-bottom: 30px;        /*  Separa la tabla del footer */
+    margin-left: auto;          /* Centra la tabla horizontalmente */
+    margin-right: auto;
+}
+    
