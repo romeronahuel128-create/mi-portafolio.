@@ -97,7 +97,10 @@ table {
     margin-right: auto;
 }
 /*AJUSTES PARA CELULAR*/
-html, body {
+@media screen and (max-width: 768px) {
+
+  /* 1. Ancho global seguro */
+  html, body {
     width: 100% !important;
     max-width: 100% !important;
     overflow-x: hidden !important;
@@ -105,57 +108,59 @@ html, body {
     padding: 0 !important;
   }
 
-  /* 2. Mantener todos los bloques visibles en su orden natural */
-  header, nav, main, section, footer, div, article {
-    display: block !important;
+  /* 2. ESPACIADO Y TAMAÑO DEL NAVEGADOR (Inicio / Quién Soy) */
+  nav, header nav, .menu {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important; /* Centra los botones */
+    gap: 15px !important;               /* Separación entre Inicio y Quién Soy */
+    padding: 15px 10px !important;      /* Margen superior e inferior */
     width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    float: none !important;
-    position: static !important;
-    writing-mode: horizontal-tb !important; /* Corrige cualquier texto vertical */
   }
 
-  /* 3. Menú de navegación centrado */
-  nav, .menu {
-    text-align: center !important;
-    padding: 10px 0 !important;
-  }
-
-  nav a, .menu a {
+  nav a, header nav a, .menu a {
+    font-size: 1rem !important;          /* Tamaño de letra cómodo para celular */
+    padding: 8px 16px !important;        /* Espacio interno para poder tocar fácil con el dedo */
+    text-decoration: none !important;
     display: inline-block !important;
-    margin: 5px 8px !important;
   }
 
-  /* 4. Fotos e Íconos (Perfil, WhatsApp y Email) */
+  /* 3. ESPACIADO DE WHATSAPP Y EMAIL */
+  /* Separa los bloques de contacto para que no queden encimados */
+  div:has(> img[src*="whatsapp"]), 
+  div:has(> img[src*="gmail"]), 
+  div:has(> img[src*="email"]),
+  .contacto, .redes {
+    display: flex !important;
+    flex-direction: column !important;   /* Apila ícono y texto si están juntos */
+    align-items: center !important;
+    gap: 20px !important;               /* Separación vertical entre WhatsApp y Email */
+    margin: 20px auto !important;       /* Margen superior e inferior para despegarlo */
+    width: 100% !important;
+  }
+
+  /* Tamaños controlados para las fotos e íconos */
   img {
     max-width: 100% !important;
     height: auto !important;
-    display: block !important;
-    margin: 10px auto !important;
   }
 
-  /* Tamaño controlado para los íconos de WhatsApp y Email */
   img[src*="whatsapp"], img[src*="gmail"], img[src*="email"] {
-    max-width: 40px !important;
-    display: inline-block !important;
+    max-width: 45px !important;          /* Tamaño ideal para íconos en móvil */
+    height: auto !important;
   }
 
-  /* 5. Textos centrados */
-  h1, h2, h3, p, footer {
-    text-align: center !important;
-    word-break: break-word !important;
-  }
-
-  /* 6. Tabla "Quién Soy" adaptada al teléfono */
+  /* 4. TABLA "QUIÉN SOY" */
   table {
     width: 95% !important;
     max-width: 100% !important;
-    margin: 15px auto !important;
-    display: table !important; /* Restaura el formato de tabla */
+    margin: 20px auto !important;
+    display: table !important;
   }
 
   td, th {
-    padding: 6px !important;
+    padding: 8px !important;
     font-size: 0.85rem !important;
+    word-break: break-word !important;
   }
+}
