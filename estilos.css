@@ -99,7 +99,7 @@ table {
 /*AJUSTES PARA CELULAR*/
 @media screen and (max-width: 768px) {
 
-  /* 1. Control del ancho de pantalla sin ocultar nada */
+  /* 1. Control general de la pantalla */
   html, body {
     width: 100% !important;
     max-width: 100% !important;
@@ -108,31 +108,54 @@ table {
     padding: 0 !important;
   }
 
-  /* 2. Mantener visibles Navegador, Nombre y Contacto */
-  header, nav, main, footer, section, div, a, p, h1, h2, h3 {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  main, section, div {
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  /* 3. Centrar imágenes (Foto de perfil, WhatsApp, Email) */
+  /* 2. RECUPERAR EL NAVEGADOR (MENÚ) */
+  nav, header nav, .menu, .navbar {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  nav a, header nav a, .menu a, .navbar a {
+    display: inline-block !important;
+    padding: 8px 12px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* 3. RECUPERAR WHATSAPP Y EMAIL */
+  /* Forzamos a que las imágenes y enlaces de contacto se vean y se centren */
+  img[src*="whatsapp"], img[src*="gmail"], img[src*="email"], .contacto, .redes, a[href*="wa.me"], a[href*="mailto"] {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 10px auto !important;
+  }
+
+  /* Si las imágenes de WhatsApp/Email están dentro de un contenedor, aseguramos que se muestre */
+  div:has(> img[src*="whatsapp"]), div:has(> img[src*="gmail"]), div:has(> img[src*="email"]) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* 4. Mantenemos las imágenes ajustadas al ancho de pantalla */
   img {
     max-width: 100% !important;
     height: auto !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
   }
 
-  /* 4. Centrar textos para celular */
-  h1, h2, h3, p, a {
-    text-align: center !important;
-    word-break: break-word !important;
-  }
-
-  /* 5. Ajuste exclusivo para la TABLA sin romper el resto de la página */
+  /* 5. Ajuste de la TABLA (que ya estaba perfecto) */
   table {
     width: 95% !important;
     max-width: 100% !important;
@@ -142,7 +165,7 @@ table {
 
   td, th {
     padding: 6px 8px !important;
-    font-size: 0.85rem !important; /* Achica el texto de la tabla para que quepa */
+    font-size: 0.85rem !important;
     word-break: break-word !important;
   }
 }
