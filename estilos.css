@@ -99,68 +99,77 @@ table {
 /*AJUSTES PARA CELULAR*/
 @media screen and (max-width: 768px) {
 
-  /* 1. Ancho global seguro */
+  /* 1. ELIMINAR LA RAYA BLANCA ENTRE HEADER Y NAV */
+  header, nav, .menu, .navbar {
+    margin: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    border: none !important; /* Quita bordes o separadores blancos */
+  }
+
+  /* 2. HACER VISIBLES LOS BOTONES DEL NAVEGADOR (Inicio / Quién Soy) */
+  nav, header nav, .menu {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    padding: 12px 0 !important;
+    background-color: transparent !important; /* Toma el color de su contenedor sin franjas */
+  }
+
+  nav a, header nav a, .menu a {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding: 8px 14px !important;
+    font-size: 0.95rem !important;
+    text-decoration: none !important;
+    /* Forzamos color para asegurar visibilidad (ajústalo si tus letras eran oscuras o claras) */
+    color: inherit !important; 
+  }
+
+  /* 3. HACER VISIBLES Y SEPARAR LOS BOTONES DE WHATSAPP Y EMAIL */
+  /* Forzamos visibilidad en el enlace y en la imagen interna */
+  a[href*="wa.me"], 
+  a[href*="mailto"], 
+  a[href*="whatsapp"], 
+  .contacto a, 
+  .redes a {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 15px auto !important;
+    text-decoration: none !important;
+  }
+
+  img[src*="whatsapp"], 
+  img[src*="gmail"], 
+  img[src*="email"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 45px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  /* 4. MANTENER TABLA Y AJUSTES GENERALES */
   html, body {
     width: 100% !important;
     max-width: 100% !important;
     overflow-x: hidden !important;
-    margin: 0 !important;
-    padding: 0 !important;
   }
 
-  /* 2. ESPACIADO Y TAMAÑO DEL NAVEGADOR (Inicio / Quién Soy) */
-  nav, header nav, .menu {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important; /* Centra los botones */
-    gap: 15px !important;               /* Separación entre Inicio y Quién Soy */
-    padding: 15px 10px !important;      /* Margen superior e inferior */
-    width: 100% !important;
-  }
-
-  nav a, header nav a, .menu a {
-    font-size: 1rem !important;          /* Tamaño de letra cómodo para celular */
-    padding: 8px 16px !important;        /* Espacio interno para poder tocar fácil con el dedo */
-    text-decoration: none !important;
-    display: inline-block !important;
-  }
-
-  /* 3. ESPACIADO DE WHATSAPP Y EMAIL */
-  /* Separa los bloques de contacto para que no queden encimados */
-  div:has(> img[src*="whatsapp"]), 
-  div:has(> img[src*="gmail"]), 
-  div:has(> img[src*="email"]),
-  .contacto, .redes {
-    display: flex !important;
-    flex-direction: column !important;   /* Apila ícono y texto si están juntos */
-    align-items: center !important;
-    gap: 20px !important;               /* Separación vertical entre WhatsApp y Email */
-    margin: 20px auto !important;       /* Margen superior e inferior para despegarlo */
-    width: 100% !important;
-  }
-
-  /* Tamaños controlados para las fotos e íconos */
-  img {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  img[src*="whatsapp"], img[src*="gmail"], img[src*="email"] {
-    max-width: 45px !important;          /* Tamaño ideal para íconos en móvil */
-    height: auto !important;
-  }
-
-  /* 4. TABLA "QUIÉN SOY" */
   table {
     width: 95% !important;
-    max-width: 100% !important;
-    margin: 20px auto !important;
-    display: table !important;
+    margin: 15px auto !important;
   }
 
   td, th {
-    padding: 8px !important;
+    padding: 6px !important;
     font-size: 0.85rem !important;
-    word-break: break-word !important;
   }
 }
