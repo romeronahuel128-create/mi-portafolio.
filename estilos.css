@@ -97,10 +97,7 @@ table {
     margin-right: auto;
 }
 /*AJUSTES PARA CELULAR*/
-@media screen and (max-width: 768px) {
-
-  /* 1. Control general de la pantalla */
-  html, body {
+html, body {
     width: 100% !important;
     max-width: 100% !important;
     overflow-x: hidden !important;
@@ -108,64 +105,57 @@ table {
     padding: 0 !important;
   }
 
-  main, section, div {
+  /* 2. Mantener todos los bloques visibles en su orden natural */
+  header, nav, main, section, footer, div, article {
+    display: block !important;
+    width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
+    float: none !important;
+    position: static !important;
+    writing-mode: horizontal-tb !important; /* Corrige cualquier texto vertical */
   }
 
-  /* 2. RECUPERAR EL NAVEGADOR (MENÚ) */
-  nav, header nav, .menu, .navbar {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  /* 3. Menú de navegación centrado */
+  nav, .menu {
+    text-align: center !important;
+    padding: 10px 0 !important;
   }
 
-  nav a, header nav a, .menu a, .navbar a {
+  nav a, .menu a {
     display: inline-block !important;
-    padding: 8px 12px !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+    margin: 5px 8px !important;
   }
 
-  /* 3. RECUPERAR WHATSAPP Y EMAIL */
-  /* Forzamos a que las imágenes y enlaces de contacto se vean y se centren */
-  img[src*="whatsapp"], img[src*="gmail"], img[src*="email"], .contacto, .redes, a[href*="wa.me"], a[href*="mailto"] {
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    margin: 10px auto !important;
-  }
-
-  /* Si las imágenes de WhatsApp/Email están dentro de un contenedor, aseguramos que se muestre */
-  div:has(> img[src*="whatsapp"]), div:has(> img[src*="gmail"]), div:has(> img[src*="email"]) {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  /* 4. Mantenemos las imágenes ajustadas al ancho de pantalla */
+  /* 4. Fotos e Íconos (Perfil, WhatsApp y Email) */
   img {
     max-width: 100% !important;
     height: auto !important;
+    display: block !important;
+    margin: 10px auto !important;
   }
 
-  /* 5. Ajuste de la TABLA (que ya estaba perfecto) */
+  /* Tamaño controlado para los íconos de WhatsApp y Email */
+  img[src*="whatsapp"], img[src*="gmail"], img[src*="email"] {
+    max-width: 40px !important;
+    display: inline-block !important;
+  }
+
+  /* 5. Textos centrados */
+  h1, h2, h3, p, footer {
+    text-align: center !important;
+    word-break: break-word !important;
+  }
+
+  /* 6. Tabla "Quién Soy" adaptada al teléfono */
   table {
     width: 95% !important;
     max-width: 100% !important;
     margin: 15px auto !important;
-    border-collapse: collapse !important;
+    display: table !important; /* Restaura el formato de tabla */
   }
 
   td, th {
-    padding: 6px 8px !important;
+    padding: 6px !important;
     font-size: 0.85rem !important;
-    word-break: break-word !important;
   }
-}
