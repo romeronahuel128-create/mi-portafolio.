@@ -99,7 +99,7 @@ table {
 /*AJUSTES PARA CELULAR*/
 @media screen and (max-width: 768px) {
 
-  /* 1. Evita desbordes generales */
+  /* 1. Control del ancho de pantalla sin ocultar nada */
   html, body {
     width: 100% !important;
     max-width: 100% !important;
@@ -108,19 +108,16 @@ table {
     padding: 0 !important;
   }
 
-  /* 2. Contenedores y alineación general */
-  main, section, header, footer, div {
+  /* 2. Mantener visibles Navegador, Nombre y Contacto */
+  header, nav, main, footer, section, div, a, p, h1, h2, h3 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  body, section, main, .contacto, .redes {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  /* 3. Ajuste de imágenes y textos */
+  /* 3. Centrar imágenes (Foto de perfil, WhatsApp, Email) */
   img {
     max-width: 100% !important;
     height: auto !important;
@@ -129,25 +126,23 @@ table {
     display: block !important;
   }
 
+  /* 4. Centrar textos para celular */
   h1, h2, h3, p, a {
     text-align: center !important;
     word-break: break-word !important;
   }
 
-  /* 4. SOLUCIÓN PARA LA TABLA "QUIÉN SOY" */
+  /* 5. Ajuste exclusivo para la TABLA sin romper el resto de la página */
   table {
-    width: 90% !important;        /* Ocupa el 90% del ancho del celular */
-    max-width: 100% !important;   /* No deja que se salga de la pantalla */
-    margin: 15px auto !important;  /* La centra horizontalmente */
-    display: block !important;    /* Permite scroll horizontal si los datos son muy largos */
-    overflow-x: auto !important;  /* Scroll interno si hace falta */
+    width: 95% !important;
+    max-width: 100% !important;
+    margin: 15px auto !important;
     border-collapse: collapse !important;
   }
 
-  /* Ajuste para las celdas y filas de la tabla */
   td, th {
-    padding: 8px 10px !important; /* Reduce el espacio interno para ahorrar espacio */
-    font-size: 0.9rem !important;  /* Achica un poco la letra en celulares */
-    word-break: normal !important;
+    padding: 6px 8px !important;
+    font-size: 0.85rem !important; /* Achica el texto de la tabla para que quepa */
+    word-break: break-word !important;
   }
 }
