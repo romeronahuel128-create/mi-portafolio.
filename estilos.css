@@ -127,7 +127,7 @@ table {
   }
 
     header img, .foto-perfil {
-  max-width: 130px !important; 
+  max-width: 170px !important; 
   height: auto !important;
   display: block !important;
   margin-left: auto !important;
@@ -135,6 +135,16 @@ table {
   float: none !important; /* Quita cualquier empuje lateral */
   align-self: center !important;
   }
+
+  header h1 {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  font-size: 1.1rem !important; /* Achica el texto para que entre todo cómodo */
+  margin: 10px auto !important;
+  clear: both !important;
+  white-space: nowrap !important; /* Mantiene tu nombre en un solo renglón */
+}
 
   /* 4. Asegura que la foto y los íconos no empujen la pantalla */
   img {
