@@ -1,98 +1,182 @@
-/*ESTA PARTE ES DEL NAVEGADOR*/
 
-.barra_de_navegacion {
-    width: 100%;             
-    background-color: #304566; 
-    padding: 10px 0
+/* RESET UNIVERSAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
- .navegacion {
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+body{
     display: flex;
-    gap: 80px;               
-    list-style: none;        
-    padding: 0;
-    margin: 0;  
-
-    justify-content: center;
-    max-width: 600px;   
-    margin-left: 500px
-}   
-.navegacion a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 25px;
+    flex-direction: column;
+    min-height: 100vh;
 }
-
-/*ESTA PARTE ES DEL HEADER */
-
+/*ESTO ES DEL HEADER*/
 header img {
-    width: 300px;
+    width: 26vh;
     border-radius: 50%;
-    max-width: 600px;   
-    margin-left: 300px
 }
 
-header {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    background-color: rgb(71, 135, 177);
-}
 header h1 {
-    font-size: 48px;
+    font-size: 6vh;
+    margin: 0; 
+    height: 5vh;
 }
 
-/*ESTA PARTE ES DEL FOOTER*/
-
-.footer-contenido{
-    
+header{
     display: flex;
-    gap: 80px;               
-    list-style: none;  
-    
-    padding: 0;
-    margin: 0;  
-
     justify-content: center;
+    align-items: center;
+    height: 30vh;
+    gap:20px;
 
-    
-    max-width: 600px;   
-    margin-left: 500px
-   
-    
+    background-color: rgb(22, 168, 168);
+
 }
-footer img {
-    width: 40px;
+/* BARRA DE NAVEGACION */
+.barra_de_navegacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background-color: rgb(0, 71, 71);
+
+}
+.navegacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    
+
+}
+
+.navegacion a{
+    text-decoration: none;
+
+    color: aliceblue;
+    font-size: 4vh;
+    border: solid 1px black;
+    padding: 5px;
+    background-color: rgb(1, 44, 49);
+    border-radius: 10px;
+    display: inline-block;
+    transition: transform 0.2s;
+
+}
+.navegacion a:hover{
+    background-color:rgb(9, 158, 158);
+    transform: scale(1.3);
+    box-shadow: 5px 5px 10px gray;
+}
+.navegacion a:focus{
+    background-color:rgb(25, 119, 72)
+}
+
+/* PARTE DEL TEXTO */
+main {
+    font-size: 1.9vh;
+    height: 30vh;
+    padding : 20px 0 20px 0;
+    flex: 1;
+}
+
+section{
+    padding: 20px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 10vh;
+
+    background-color: rgb(22, 168, 168);   
+}
+
+footer div img{
+    width: 5vh;
     border-radius: 50%;
-    margin-top: 9px;
+}
+.btn-whatsapp, .btn-email{
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 
 }
 footer p{
-    font-size: 9px;
-    margin-top: 52px;   
-    margin-left: -258px;
+    justify-content: center;
 }
 
-.fondo{
-    width: 100%;             
-    background-color:  rgb(71, 135, 177); 
-    padding: 10px
-}
+/* PARTE DE LA TABLA */
 
-
-/*ESTO PARA EL MAIN*/
-main {
-    font-size: 20px;
-    
-}
-/*ESTO PARA LA TABLA*/
-table, th, td {
-    border: 1px solid black;
-}
 table {
-    width: 90%;                
-    margin-top: 30px;          
-    margin-bottom: 30px;        
-    margin-left: auto;          
-    margin-right: auto;
+    border-collapse: collapse; 
+    width: 100%;
 }
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr th{
+    text-align: center;
+}
+/* PARTE RESPONSIVA PARA CELULARES */
+@media (max-width: 768px){
+    header{
+        height: auto;
+        padding: 20px;
+
+    }
+    header img{
+        width: 20vh;
+    }
+    header h1{
+        font-size: 4vh;
+        height: auto;
+    }
+    .barra_de_navegacion{
+        height: auto;
+        padding: 10px;
+    }
+    main{
+        font-size: 1.9vh;
+        height: auto;
+        padding : 3px 0 3px 0;
+    }
+    section{
+        padding: 10px;
+    }
+    footer{
+        height: auto;
+        padding: 10px;
+    }
+    footer div img{
+        width: 4vh;
+    }
+    footer p{
+        display: column;
+        font-size: 1.5vh;
+
+    }
+    table{
+        font-size: 1.5vh;
+        width: 100%;
+    }
+    th, td{
+        padding: 5px;
+    }
+
+}
+
+
