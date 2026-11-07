@@ -172,7 +172,7 @@ tr th{
         width: 4vh;
     }
     footer p{
-        display: column;
+        text-align: center;
         font-size: 1.5vh;
 
     }
