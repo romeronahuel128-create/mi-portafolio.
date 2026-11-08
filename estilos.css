@@ -60,7 +60,7 @@ header{
     text-decoration: none;
 
     color: aliceblue;
-    font-size: 4vh;
+    font-size: 3vh;
     border: solid 1px black;
     padding: 5px;
     background-color: rgb(1, 44, 49);
@@ -157,7 +157,7 @@ tr th{
         padding: 10px;
     }
     main{
-        font-size: 1.9vh;
+        font-size: 1.5vh;
         height: auto;
         padding : 3px 0 3px 0;
     }
@@ -166,7 +166,7 @@ tr th{
     }
     footer{
         height: auto;
-        padding: 10px;
+        padding: 15px;
     }
     footer div img{
         width: 4vh;
