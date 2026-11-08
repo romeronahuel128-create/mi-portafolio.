@@ -91,29 +91,30 @@ section{
 }
 
 
-footer.fondo {
+footer{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; 
     justify-content: center;
+    align-items: center;
+    height: 20vh;
+    background-color: rgb(22, 168, 168);
     gap: 10px;
-    width: 100%;
-    text-align: center;
 }
-
+footer img{
+    width: 7vh;
+    border-radius: 50%;
+}
 .footer-contenido {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    width: 100%;
+    gap: 20px;
 }
-
-footer.fondo p {
-    width: 100%;
-    text-align: center;
+.footer p{
+   text-align: center;
     margin: 0;
+
 }
 
 /* PARTE DE LA TABLA */
