@@ -106,7 +106,7 @@ footer img{
 }
 .footer-contenido {
     display: flex;
-    flex-direction: row; 
+    flex-direction: center; 
     justify-content: center;
     align-items: center;
     gap: 20px;
