@@ -90,35 +90,35 @@ section{
     padding: 20px;
 }
 
-footer{
+footer.fondo{
     display: flex;
+    flex-direction: column !important; 
     justify-content: center;
-    flex-direction: column;
     align-items: center;
+    text-align: center;
     padding: 10px;
-    /* height: 10vh; */
-
-    background-color: rgb(22, 168, 168);   
+    background-color: rgb(22, 168, 168);
+    width: 100%;
 }
-footer div{
-    display: flex; 
+
+.footer-contenido{
+    display: flex;
+    flex-direction: row; 
     justify-content: center;
     align-items: center;
-    gap: 10px; 
+    gap: 10px;
+    width: 100%;
 }
 
-footer div img{
+.footer-contenido img{
     width: 5vh;
     border-radius: 50%;
 }
-.btn-whatsapp, .btn-email{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-footer p{
-    justify-content: center;
+
+footer.fondo p{
+    text-align: center;
     margin: 5px 0 0 0;
+    width: 100%;
 }
 
 /* PARTE DE LA TABLA */
@@ -164,17 +164,17 @@ tr th{
     section{
         padding: 10px;
     }
-    footer{
+    footer.fondo{
         height: auto;
         padding: 15px;
+        gap: 3px;
     }
-    footer div img{
-        width: 4vh;
+.footer-contenido img{
+        width: 5vh;
+        height: 5vh;
     }
-    footer p{
-        text-align: center;
-        font-size: 1.3vh;
-
+footer.fondo p{
+        font-size: 1.5vh;
     }
     table{
         font-size: 1.5vh;
